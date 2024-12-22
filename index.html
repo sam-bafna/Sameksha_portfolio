@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameksha Bafna | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to navigate between pages
+        function navigateTo(page) {
+            const pages = document.querySelectorAll(".page");
+            pages.forEach(p => (p.style.display = "none")); // Hide all pages
+            document.getElementById(page).style.display = "block"; // Show the target page
+        }
+
+        // Trigger download of resume
+        function downloadResume() {
+            const link = document.createElement("a");
+            link.href = "assetsimages/sameksha_bafna_resume.pdf"; // Corrected path
+            console.log("Downloading from:", link.href); // Debugging
+            link.download = "Sameksha_Bafna_Resume.pdf";
+            link.click();
+        }
+        
+
+        // Initialize to show the first page by default
+        document.addEventListener("DOMContentLoaded", () => {
+            navigateTo("page1");
+        });
+    </script>
+</head>
+<body>
+    <!-- First Page -->
+    <div id="page1" class="page">
+        <header>
+            <nav>
+                <h1>Sameksha Bafna</h1>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="assetsimages/profile%20photo.jpg" alt="Profile Photo" width="150" height="150">
+
+                <h2>Hi, I'm Sameksha Bafna</h2>
+                <p>Final-year BCA Student | Designer | Developer</p>
+                <div class="buttons">
+                    <button class="btn" onclick="navigateTo('page2')">View My Resume</button>
+                    <button class="btn" onclick="downloadResume()">Download Resume</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Second Page -->
+    <div id="page2" class="page" style="display: none;">
+        <header>
+            <nav>
+                <h1>Resume</h1>
+                <button class="back-btn" onclick="navigateTo('page1')">Back</button>
+            </nav>
+        </header>
+        <section class="content">
+            <!-- Education Section -->
+            <div class="section">
+                <h2>Education</h2>
+                <div class="card">
+                    <h3>KLE Technological University, Hubballi</h3>
+                    <p>Bachelor of Computer Applications (BCA) - CGPA: 9.06</p>
+                </div>
+                <div class="card">
+                    <h3>KLE INDP SC PU College, Gangavathi</h3>
+                    <p>Senior Secondary (XII) - 97.17%</p>
+                </div>
+                <div class="card">
+                    <h3>Little Hearts School, Gangavathi</h3>
+                    <p>Secondary Education (X) - 92%</p>
+                </div>
+            </div>
+
+            <!-- Research Projects Section -->
+            <div class="section">
+                <h2>Research Projects</h2>
+                <div class="card">
+                    <h3>Dynamic Black Hole Attacks in WSNs</h3>
+                    <p>Developed a Swarm-Enabled Intrusion Detection System using Ant Colony and Artificial Bee Colony algorithms for Wireless Sensor Networks.</p>
+                </div>
+                <div class="card">
+                    <h3>Plastic Ban Impact on Ocean Industries</h3>
+                    <p>Used clustering algorithms like K-means to analyze the impact of the plastic ban on ocean-dependent industries.</p>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section">
+                <h2>Projects</h2>
+                <div class="card">
+                    <h3>Predicting Housing Prices</h3>
+                    <p>Developed a linear regression model using Python, Seaborn, and NumPy to predict housing prices with 95% accuracy.</p>
+                </div>
+                <div class="card">
+                    <h3>College Website</h3>
+                    <p>Created a project management system using MERN stack for students and faculty to track project details and reviews.</p>
+                </div>
+                <div class="card">
+                    <h3>Age and Gender Detector</h3>
+                    <p>Built a real-time application using Python and CNNs for age and gender detection with 90% accuracy.</p>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="section">
+                <h2>Achievements</h2>
+                <div class="card">
+                    <h3>1st Prize in Paper Presentation</h3>
+                    <p>Presented research on heuristic approaches for detecting black hole attacks in wireless networks.</p>
+                </div>
+                <div class="card">
+                    <h3>1st Prize in Quiz Competition</h3>
+                    <p>Won an inter-college quiz competition for technical knowledge.</p>
+                </div>
+                <div class="card">
+                    <h3>1st Prize in Throwball Tournament</h3>
+                    <p>Secured 1st prize in an inter-college throwball tournament.</p>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="section">
+                <h2>Certifications</h2>
+                <div class="card">
+                    <h3>IBM – Data Analysis for Machine Learning</h3>
+                    <p>Certification for advanced data analysis skills in machine learning.</p>
+                </div>
+                <div class="card">
+                    <h3>Udemy – Complete Python Bootcamp</h3>
+                    <p>Completed a comprehensive course on Python programming, covering fundamentals to advanced techniques.</p>
+                </div>
+                <div class="card">
+                    <h3>NPTEL – Data Science for Engineers</h3>
+                    <p>Completed an advanced-level course on data science and engineering techniques.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
